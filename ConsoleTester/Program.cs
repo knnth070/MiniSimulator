@@ -1,11 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using MiniSimulator.Domain;
+﻿using MiniSimulator.Domain;
 
 var sim = new Simulator();
 
-var homeTeam = new Team("FC Home", 0.8f, .4f, 1, false);
-var awayTeam = new Team("Visitors United", .6f, .0f, .8f, false);
+var homeTeam = new Team("FC Home", 0.8f, .5f, 1, false);
+var awayTeam = new Team("Visitors United", .8f, .3f, .8f, true);
 
 for (int i = 0; i < 10; i++)
 {
