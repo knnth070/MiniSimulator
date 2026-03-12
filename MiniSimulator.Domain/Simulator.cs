@@ -5,7 +5,7 @@ public class Simulator
     private const float AttemptsPerMatch = 6;
 
     private readonly IEffectiveStrengthStrategy _effectiveStrengthStrategy =
-        new CompositeStrategy(new StaminaStrategy(), new LateSurgeStrategy());
+        new CompositeStrategy(new InitialStrengthStrategy(), new StaminaStrategy(), new LateSurgeStrategy());
 
     public void Simulate(Group group)
     {

@@ -8,7 +8,7 @@ internal class StaminaStrategy : IEffectiveStrengthStrategy
 
         for (var i = 0; i < 2; i++)
         {
-            var (attack, defense) = CalculateEffectiveStrength(matchState.TeamStates[i].Team, minute);
+            var (attack, defense) = CalculateEffectiveStrength(matchState.TeamStates[i], minute);
             teamStates[i].EffectiveAttackStrength = attack;
             teamStates[i].EffectiveDefenseStrength = defense;
         }
@@ -16,9 +16,9 @@ internal class StaminaStrategy : IEffectiveStrengthStrategy
         return new MatchState { TeamStates = teamStates };
     }
 
-    private (float, float) CalculateEffectiveStrength(Team team, int minute)
+    private (float, float) CalculateEffectiveStrength(TeamState teamState, int minute)
     {
-        var effectiveStamina = 1 + ((team.Stamina - 1) / 90) * minute;
-        return (team.AttackScore * effectiveStamina, team.DefenseScore * effectiveStamina);
+        var effectiveStamina = 1 + ((teamState.Team.Stamina - 1) / 90) * minute;
+        return (teamState.EffectiveAttackStrength * effectiveStamina, teamState.EffectiveDefenseStrength * effectiveStamina);
     }
 }
