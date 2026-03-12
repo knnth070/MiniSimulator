@@ -1,6 +1,6 @@
 ﻿namespace MiniSimulator.Data;
 
-internal class StubRepository : ITeamRepository
+public class StubRepository : ITeamRepository
 {
     public TeamData[] GetTeams() =>
     [

@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\MiniSimulator.Data\MiniSimulator.Data.csproj" />
       <ProjectReference Include="..\MiniSimulator.Domain\MiniSimulator.Domain.csproj" />
     </ItemGroup>
 
