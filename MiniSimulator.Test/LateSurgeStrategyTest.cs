@@ -28,7 +28,9 @@ public class LateSurgeStrategyTest
     }
 
     [TestMethod]
-    public void IsAppliedInLastQuarter()
+    [DataRow(1f, 1f, 1.25f, 0.75f)]
+    [DataRow(0.8f, 0.7f, 1f, 0.525f)]
+    public void IsAppliedInLastQuarter(float attack, float defense, float attackResult, float defenseResult)
     {
         var sut = new LateSurgeStrategy();
 
@@ -39,14 +41,14 @@ public class LateSurgeStrategyTest
         {
             TeamStates =
             [
-                new TeamState { Team = home, EffectiveAttackStrength = 1, EffectiveDefenseStrength = 1, Goals = 0 },
+                new TeamState { Team = home, EffectiveAttackStrength = attack, EffectiveDefenseStrength = defense, Goals = 0 },
                 new TeamState { Team = away, Goals = 1 },
             ]
         };
         var result = sut.Calculate(matchState, 80);
 
-        Assert.AreEqual(1.25, result.TeamStates[0].EffectiveAttackStrength);
-        Assert.AreEqual(0.75, result.TeamStates[0].EffectiveDefenseStrength);
+        Assert.AreEqual(attackResult, result.TeamStates[0].EffectiveAttackStrength);
+        Assert.AreEqual(defenseResult, result.TeamStates[0].EffectiveDefenseStrength);
     }
 
     [TestMethod]
