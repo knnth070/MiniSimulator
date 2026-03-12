@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniSimulator.Data", "MiniS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTester", "ConsoleTester\ConsoleTester.csproj", "{7625A7CE-352E-42B7-8421-0F524D66F86B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniSimulator.Test", "MiniSimulator.Test\MiniSimulator.Test.csproj", "{37F65F77-7D2D-4F19-A8E2-164DDBF4B85F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{7625A7CE-352E-42B7-8421-0F524D66F86B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7625A7CE-352E-42B7-8421-0F524D66F86B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7625A7CE-352E-42B7-8421-0F524D66F86B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37F65F77-7D2D-4F19-A8E2-164DDBF4B85F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37F65F77-7D2D-4F19-A8E2-164DDBF4B85F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37F65F77-7D2D-4F19-A8E2-164DDBF4B85F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37F65F77-7D2D-4F19-A8E2-164DDBF4B85F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
