@@ -13,6 +13,8 @@ public class RankingComparer(IEnumerable<Match> matches) : IComparer<RankingItem
         var forComparison = x.For.CompareTo(y.For);
         if (forComparison != 0) return forComparison;
 
+        // This tiebreaker conforms to the assignment, but if diffComparison
+        // and forComparison don't break the tie, neither will this one
         var againstComparison = x.Against.CompareTo(y.Against);
         // fewest goals against is better, so invert result
         if (againstComparison != 0) return -1 * againstComparison;
