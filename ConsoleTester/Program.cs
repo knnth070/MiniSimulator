@@ -21,6 +21,7 @@ foreach (var match in group.Matches)
 Console.WriteLine();
 
 var ranking = RankingGenerator.GetRanking(teams, group);
+Console.WriteLine("Pos.  Team       Played   Win    Draw   Loss   For   Against   Diff   Points");
 foreach (var rankingItem in ranking)
 {
     Console.WriteLine(rankingItem);

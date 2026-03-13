@@ -57,19 +57,3 @@ public class RankingGenerator
             .ToList();
     }
 }
-
-public readonly struct RankingItem
-{
-    public int Position { get; init; }
-    public string Team { get; init; }
-    public int Played { get; init; }
-    public int Win { get; init; }
-    public int Draw { get; init; }
-    public int Loss { get; init; }
-    public int For { get; init; }
-    public int Against { get; init; }
-    public int Points { get; init; }
-
-    public override string ToString() =>
-        $"{Position}.  {Team} {Played} {Win} {Draw} {Loss} {For} {Against} {For - Against} {Points}";
-}
