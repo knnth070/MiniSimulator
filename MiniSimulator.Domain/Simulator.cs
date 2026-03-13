@@ -9,7 +9,8 @@ public class Simulator
 
     public void Simulate(Group group)
     {
-        foreach (var match in group.Matches.Where(m => !m.IsPlayed))
+        var matchesToPlay = group.Matches.Where(m => !m.IsPlayed).ToList();
+        foreach (var match in matchesToPlay)
         {
             SimulateMatch(match);
         }
