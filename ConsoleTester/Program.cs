@@ -3,9 +3,6 @@ using MiniSimulator.Domain;
 
 var sim = new Simulator();
 
-var homeTeam = new Team("FC Home", 0.8f, .5f, 1, false);
-var awayTeam = new Team("Visitors United", .8f, .3f, .8f, true);
-
 var teamData = new StubRepository().GetTeams();
 
 var teams = teamData
