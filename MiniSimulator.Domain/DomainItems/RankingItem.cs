@@ -13,5 +13,5 @@ public readonly struct RankingItem
     public int Points { get; init; }
 
     public override string ToString() =>
-        $"{Position, 5} {Team,-10} {Played,-8} {Win,-6} {Draw,-6} {Loss, -6} {For,-5} {Against, -9} {For - Against,-6} {Points,-6}";
+        $"{Position,5} {Team,-10} {Played,-8} {Win,-6} {Draw,-6} {Loss,-6} {For,-5} {Against,-9} {For - Against,-6} {Points,-6}";
 }

@@ -1,6 +1,6 @@
 namespace MiniSimulator.Domain;
 
-public class RankingGenerator
+public static class RankingGenerator
 {
     private const int PointsForWin = 3;
     private const int PointsForDraw = 1;
@@ -53,7 +53,8 @@ public class RankingGenerator
         }
 
         return ranking
-            .OrderByDescending(x => x.Points)
+            .OrderByDescending(x => x, new RankingComparer(group.Matches))
+            .Select((r, i) => r with { Position = i + 1 })
             .ToList();
     }
 }
