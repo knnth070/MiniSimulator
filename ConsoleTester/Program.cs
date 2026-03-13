@@ -17,3 +17,11 @@ foreach (var match in group.Matches)
 {
     Console.WriteLine(match);
 }
+
+Console.WriteLine();
+
+var ranking = RankingGenerator.GetRanking(teams, group);
+foreach (var rankingItem in ranking)
+{
+    Console.WriteLine(rankingItem);
+}
