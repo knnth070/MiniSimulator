@@ -20,8 +20,14 @@ public class RankingComparer(IEnumerable<Match> matches) : IComparer<RankingItem
         if (againstComparison != 0) return -1 * againstComparison;
 
         var match = matches
-            .Single(m => m.HomeTeam.Name == x.Team && m.AwayTeam.Name == y.Team ||
+            .SingleOrDefault(m => m.HomeTeam.Name == x.Team && m.AwayTeam.Name == y.Team ||
                          m.AwayTeam.Name == x.Team && m.HomeTeam.Name == y.Team);
+
+        if (match == null)
+        {
+            throw new Exception("All team should've played each other but the match was not found.");
+        }
+        
         if (match.HomeGoals > match.AwayGoals)
         {
             return x.Team == match.HomeTeam.Name ? 1 : -1;
