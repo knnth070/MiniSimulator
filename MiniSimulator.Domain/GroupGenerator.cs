@@ -6,6 +6,11 @@ public static class GroupGenerator
 {
     public static Group Generate(Team[] teams)
     {
+        if (teams.Length != teams.Select(t => t.Name).Distinct().Count())
+        {
+            throw new Exception("Team names should be unique.");
+        }
+
         var matches = new List<Match>();
 
         var tempTeams = teams.ToList();
@@ -22,6 +27,7 @@ public static class GroupGenerator
                 {
                     (home, away) = (away, home);
                 }
+
                 var match = new Match(home, away, round);
                 matches.Add(match);
             }
