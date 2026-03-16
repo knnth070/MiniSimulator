@@ -1,0 +1,46 @@
+﻿<Window x:Class="MiniSimulator.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniSimulator.UI"
+        mc:Ignorable="d"
+        Title="Mini Simulator" Height="450" Width="600" ResizeMode="CanMinimize">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Button Command="{Binding RerunCommand}" Margin="5" Content="Rerun simulation" HorizontalAlignment="Left"
+                Grid.Row="0" VerticalAlignment="Top" Width="100" />
+
+        <DataGrid ItemsSource="{Binding Matches}" AutoGenerateColumns="False" Margin="5"
+                  Grid.Row="1" Grid.Column="0" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Round" Width="50" Binding="{Binding Round}" />
+                <DataGridTextColumn Header="Home" Width="*" Binding="{Binding HomeTeam}" />
+                <DataGridTextColumn Header="Away" Width="*" Binding="{Binding AwayTeam}" />
+                <DataGridTextColumn Header="Result" Width="50" Binding="{Binding Result}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid ItemsSource="{Binding Ranking}" AutoGenerateColumns="False" Margin="5"
+                  Grid.Row="2" Grid.Column="0" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Position" Width="50" Binding="{Binding Position}" />
+                <DataGridTextColumn Header="Team" Width="100" Binding="{Binding Team}" />
+                <DataGridTextColumn Header="Played" Width="50" Binding="{Binding Played}" />
+                <DataGridTextColumn Header="Win" Width="50" Binding="{Binding Win}" />
+                <DataGridTextColumn Header="Draw" Width="50" Binding="{Binding Draw}" />
+                <DataGridTextColumn Header="Loss" Width="50" Binding="{Binding Loss}" />
+                <DataGridTextColumn Header="For" Width="50" Binding="{Binding For}" />
+                <DataGridTextColumn Header="Against" Width="50" Binding="{Binding Against}" />
+                <DataGridTextColumn Header="Diff" Width="50" Binding="{Binding Diff}" />
+                <DataGridTextColumn Header="Points" Width="50" Binding="{Binding Points}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

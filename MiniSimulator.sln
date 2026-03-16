@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTester", "ConsoleTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniSimulator.Test", "MiniSimulator.Test\MiniSimulator.Test.csproj", "{37F65F77-7D2D-4F19-A8E2-164DDBF4B85F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniSimulator.UI", "MiniSimulator.UI\MiniSimulator.UI.csproj", "{F470DAAF-3521-481B-AEFC-479B516232EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{37F65F77-7D2D-4F19-A8E2-164DDBF4B85F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37F65F77-7D2D-4F19-A8E2-164DDBF4B85F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37F65F77-7D2D-4F19-A8E2-164DDBF4B85F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F470DAAF-3521-481B-AEFC-479B516232EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F470DAAF-3521-481B-AEFC-479B516232EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F470DAAF-3521-481B-AEFC-479B516232EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F470DAAF-3521-481B-AEFC-479B516232EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

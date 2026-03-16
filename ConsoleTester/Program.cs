@@ -1,8 +1,6 @@
 ﻿using MiniSimulator.Data;
 using MiniSimulator.Domain;
 
-var sim = new Simulator();
-
 var teamData = new StubRepository().GetTeams();
 
 var teams = teamData
@@ -11,7 +9,7 @@ var teams = teamData
     .ToArray();
 
 var group = GroupGenerator.Generate(teams);
-sim.Simulate(group);
+Simulator.Simulate(group);
 
 foreach (var match in group.Matches)
 {

@@ -1,13 +1,13 @@
 namespace MiniSimulator.Domain;
 
-public class Simulator
+public static class Simulator
 {
     private const float AttemptsPerMatch = 6;
 
-    private readonly IEffectiveStrengthStrategy _effectiveStrengthStrategy =
+    private static readonly IEffectiveStrengthStrategy _effectiveStrengthStrategy =
         new CompositeStrategy(new InitialStrengthStrategy(), new StaminaStrategy(), new LateSurgeStrategy());
 
-    public void Simulate(Group group)
+    public static void Simulate(Group group)
     {
         var matchesToPlay = group.Matches.Where(m => !m.IsPlayed).ToList();
         foreach (var match in matchesToPlay)
@@ -16,7 +16,7 @@ public class Simulator
         }
     }
 
-    private void SimulateMatch(Match match)
+    private static void SimulateMatch(Match match)
     {
         Random random = new();
 
